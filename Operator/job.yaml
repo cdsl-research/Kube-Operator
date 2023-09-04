@@ -1,0 +1,52 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: operator
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: myapp
+        image: python:3
+        command:
+          - sh
+          - -c
+          - |
+            apt update \
+            && apt upgrade -y \
+            && apt install -y iputils-ping \
+            && python3 -m venv .venv \
+            && . .venv/bin/activate \
+            && pip install --upgrade pip \
+            && pip install requests \
+            && pip install slackweb \
+            && mkdir /myapp \
+            && cp /usr/src/* /myapp \
+            && ls /myapp/ \
+            && python /myapp/run.py  # 新しいPythonスクリプトを使用します
+
+        volumeMounts:
+        - mountPath: /usr/src
+          name: script
+      volumes:
+      - name: script
+        configMap:
+          name: myapp
+      imagePullSecrets:
+      - name: regcred
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  selector:
+    job-name: myapp   # Jobリソースのラベル(job-name)に基づいてPodを選択
+  ports:
+    - protocol: TCP
+      port: 30000  # PythonのXML-RPCサーバーのポート番号
+      targetPort: 30000   # Jobコンテナ内でサーバーがリッスンしているポート番号
+  type: LoadBalancer   # 外部からのアクセスを許可するためにLoadBalancerタイプを使用

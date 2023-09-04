@@ -1,0 +1,29 @@
+{
+  "pod_metrics": [
+    [
+      "mysql-test-7fdb54d5d6-bcc2h",
+      "0",
+      "82476",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-cht6b",
+      "0",
+      "167068",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-mdl7x",
+      "0",
+      "141348",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-qszc5",
+      "0",
+      "153840",
+      "Alive"
+    ]
+  ],
+  "pod_info": []
+}

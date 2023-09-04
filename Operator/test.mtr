@@ -1,0 +1,47 @@
+module{
+  alive: 
+    ip: 192.168.100.204
+  web:
+    url: https://qiita.com/
+  alert: 
+    url: https://hooks.slack.com/services/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
+  cpu_pod:
+    namespace: test
+  memori_pod:
+    namespace: test
+  agent_ip:
+    ip: 192.168.100.204
+}
+module_rule{
+  alive{
+    loop(3,3s)
+      alive.status == True:
+  }
+  web{
+    loop(3,3s)
+      web.status <= 500:
+  }
+  cpu_pod{
+    loop(3,3s)
+      cpu_pod.percent >= 60:
+  }
+  memori_pod{
+    loop(3,3s)
+      memori_pod.percent >= 80:
+  }
+}
+condition{
+  infinite_loop = True:
+    if cpu_pod == False:
+      alert("CPU使用率が高いです")
+    elif memori_pod == False:
+      alert("memori")
+    elseif web == False:
+      alert("web")
+    elseif cpu_pod or memori_pod == False:
+      alert("cpu or memori")
+    elif alive == "False":
+      alert("alive")
+    elif cpu_pod or memori_pod or alive == False:
+      alert("cpu or memori or alive")
+      }

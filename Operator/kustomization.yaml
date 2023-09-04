@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+- name: myapp
+  files:
+  - condition.py 
+  - filepath.py
+  - remote.py
+  - run.py
+  - test.mtr
+  - condition_rule.py
+  - module_ana.py
+  - data.json
+  - Alert/alert_module.py
+  - Cpu/cpu.py
+  - Memori/memori.py
+  - Web/web.py
+  - Alive/alive.py
+resources:
+- job.yaml

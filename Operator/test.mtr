@@ -23,11 +23,11 @@ module_rule{
   }
   cpu_pod{
     loop(3,3s)
-      cpu_pod.percent >= 60:
+      cpu_pod.usage >= 9:
   }
   memori_pod{
     loop(3,3s)
-      memori_pod.percent >= 80:
+      memori_pod.usage >= 500000:
   }
 }
 condition{
@@ -44,4 +44,4 @@ condition{
       alert("alive")
     elif cpu_pod or memori_pod or alive == False:
       alert("cpu or memori or alive")
-      }
+}

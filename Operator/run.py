@@ -8,6 +8,8 @@ from web import web_status
 from alert_module import alert_mo
 import time
 from remote import remote
+from remote2 import remote2
+from remote3 import remote3
 import re
 
 file = file_path()
@@ -74,6 +76,8 @@ print("module_status: ", module_status)
 
 while True:
     remote()
+    remote2()
+    remote3()
     module_status = module_oversight()
     cpu_pod = module_status["cpu_pod"]
     memori_pod = module_status["memori_pod"]

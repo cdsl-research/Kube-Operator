@@ -1,27 +1,129 @@
 {
   "pod_metrics": [
     [
-      "mysql-test-7fdb54d5d6-bcc2h",
+      "mysql-test-7fdb54d5d6-fsc8m",
       "0",
-      "82476",
+      "194140",
       "Alive"
     ],
     [
-      "wordpress-test-77c96ddccd-cht6b",
+      "wordpress-test-77c96ddccd-45qwh",
       "0",
-      "167068",
+      "18484",
       "Alive"
     ],
     [
-      "wordpress-test-77c96ddccd-mdl7x",
+      "wordpress-test-77c96ddccd-4hznt",
       "0",
-      "141348",
+      "60300",
       "Alive"
     ],
     [
-      "wordpress-test-77c96ddccd-qszc5",
+      "wordpress-test-77c96ddccd-4n9lw",
       "0",
-      "153840",
+      "32716",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-5g8rh",
+      "0",
+      "29128",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-b2lnh",
+      "0",
+      "29396",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-b42r4",
+      "0",
+      "25968",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-bvbj6",
+      "0",
+      "28972",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-dmhvm",
+      "0",
+      "56816",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-g6ffc",
+      "0",
+      "52888",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-h552t",
+      "0",
+      "27280",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-j5mvf",
+      "0",
+      "8108",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-kxl2r",
+      "0",
+      "27364",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-lcmnx",
+      "0",
+      "35700",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-rghts",
+      "0",
+      "4376",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-sjn5d",
+      "0",
+      "14052",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-szfhv",
+      "0",
+      "56192",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-vl96m",
+      "0",
+      "61804",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-vw8wh",
+      "0",
+      "12532",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-wrp84",
+      "0",
+      "72088",
+      "Alive"
+    ],
+    [
+      "wordpress-test-77c96ddccd-xfljh",
+      "0",
+      "61332",
       "Alive"
     ]
   ],

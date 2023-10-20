@@ -6,11 +6,15 @@ configMapGenerator:
   - condition.py 
   - filepath.py
   - remote.py
+  - remote2.py
+  - remote3.py
   - run.py
   - test.mtr
   - condition_rule.py
   - module_ana.py
   - data.json
+  - data2.json
+  - data3.json
   - Alert/alert_module.py
   - Cpu/cpu.py
   - Memori/memori.py

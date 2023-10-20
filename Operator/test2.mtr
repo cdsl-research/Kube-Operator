@@ -1,0 +1,119 @@
+module{
+  alive1: 
+    ip: 192.168.100.1
+  alive2:
+    ip: 192.168.100.2
+  alive3:
+    ip: 192.168.100.3
+  alive4:
+    ip: 192.168.100.4
+  alive5:
+    ip: 192.168.100.5
+  alive6:
+    ip: 192.168.100.6
+  alive7:
+    ip: 192.168.100.7
+  alive8:
+    ip: 192.168.100.8
+  alive9:
+    ip: 192.168.100.9
+  alive10:
+    ip: 192.168.100.10
+  web:
+    url: https://qiita.com/
+  alert: 
+    url: https://hooks.slack.com/services/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
+  cpu_pod:
+    namespace: test
+  memori_pod:
+    namespace: test
+  agent_ip:
+    ip: 192.168.100.204
+}
+module_rule{
+  alive1{
+    loop(3,3s)
+      alive.status == True:
+  }
+  alive2{
+    loop(3,3s)
+      alive.status == True:
+  }
+  alive3{
+    loop(3,3s)
+      alive.status == True:
+  }
+  alive4{
+    loop(3,3s)
+      alive.status == True:
+  }
+  alive5{
+    loop(3,3s)
+      alive.status == True:
+  }
+  alive6{
+    loop(3,3s)
+      alive.status == True:
+  }
+  alive7{
+    loop(3,3s)
+      alive.status == True:
+  }
+  alive8{
+    loop(3,3s)
+      alive.status == True:
+  }
+  alive9{
+    loop(3,3s)
+      alive.status == True:
+  }
+  alive10{
+    loop(3,3s)
+      alive.status == True:
+  }
+  web{
+    loop(3,3s)
+      web.status <= 500:
+  }
+  cpu_pod{
+    loop(3,3s)
+      cpu_pod.percent >= 60:
+  }
+  memori_pod{
+    loop(3,3s)
+      memori_pod.percent >= 80:
+  }
+}
+condition{
+  infinite_loop = True:
+    if alive1 == "False":
+      alert("alive1")
+    elif alive2 == "False":
+      alert("alive2")
+    elif alive3 == "False":
+      alert("alive3")
+    elif alive4 == "False":
+      alert("alive4")
+    elif alive5 == "False":
+      alert("alive5")
+    elif alive6 == "False":
+      alert("alive6")
+    elif alive7 == "False":
+      alert("alive7")
+    elif alive8 == "False":
+      alert("alive8")
+    elif alive9 == "False":
+      alert("alive9")
+    elif alive10 == "False":
+      alert("alive10")
+    elif cpu_pod == False:
+      alert("CPU使用率が高いです")
+    elif memori_pod == False:
+      alert("memori")
+    elseif web == False:
+      alert("web")
+    elseif cpu_pod or memori_pod == False:
+      alert("cpu or memori")
+    elif cpu_pod or memori_pod or web == False:
+      alert("cpu or memori or web")
+      }
